@@ -153,7 +153,7 @@ func (a Animal)move()  {
 
 type person struct {
 	thing string
-	*Animal
+	*Animal    //这里必须是匿名，否则无法实现“继承”
 }
 
 func (p *person)think()  {
