@@ -17,6 +17,15 @@ func declareVariable()  {
 	fmt.Println(name,address)
 }
 
+func declareConstant()  {
+	const (
+		c0 = iota     // 0
+		c1
+		c2 = 4
+		c3 = iota     //3
+	)
+}
+
 func getTheFlag() *string {
 	return flag.String("name","everyone","the greeting object")
 }
