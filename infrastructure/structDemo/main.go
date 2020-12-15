@@ -190,6 +190,59 @@ func (p *Person)SetDreams1(dreams []string)  {
 	copy(p.dreams, dreams)    // copy函数
 }
 
+
+// AnimalCategory 代表动物分类学中的基本分类法。
+type AnimalCategory struct {
+	kingdom string // 界。
+	phylum string // 门。
+	class  string // 纲。
+	order  string // 目。
+	family string // 科。
+	genus  string // 属。
+	species string // 种。
+}
+
+
+type AnimalOfEarth struct {
+	scientificName string // 学名。
+	AnimalCategory    // 动物基本分类。
+}
+
+func (ac AnimalCategory) String() string {    // 这里接收者一定不能是指针
+	return fmt.Sprintf("%s%s%s%s%s%s%s",
+		ac.kingdom, ac.phylum, ac.class, ac.order,
+		ac.family, ac.genus, ac.species)
+}
+
+func (ac AnimalCategory) ToString() string {
+	return fmt.Sprintf("%s%s%s%s%s%s%s",
+		ac.kingdom, ac.phylum, ac.class, ac.order,
+		ac.family, ac.genus, ac.species)
+}
+
+func (ac AnimalCategory) string() string {
+	return fmt.Sprintf("%s%s%s%s%s%s%s",
+		ac.kingdom, ac.phylum, ac.class, ac.order,
+		ac.family, ac.genus, ac.species)
+}
+
+
+func (a AnimalOfEarth) String() string {
+	return fmt.Sprintf("%s (category: %s)",
+		a.scientificName, a.AnimalCategory)
+}
+
+
+type Cat struct {
+	name string
+	AnimalOfEarth
+}
+
+func (cat Cat) String() string {
+	return fmt.Sprintf("%s (category: %s, name: %q)",
+		cat.scientificName, cat.AnimalOfEarth.AnimalCategory, cat.name)
+}
+
 func main()  {
 	
 	//define()
@@ -297,13 +350,25 @@ func main()  {
 //	fmt.Printf("%#v\n", c1)
 
 
-	p := Person{
-		name: "张无忌",
-		age: 21,
-	}
-	dreams := []string{"九阳神功","乾坤大挪移","太极剑法","太极拳法"}
-	p.SetDreams1(dreams)
+	//p := Person{
+	//	name: "张无忌",
+	//	age: 21,
+	//}
+	//dreams := []string{"九阳神功","乾坤大挪移","太极剑法","太极拳法"}
+	//p.SetDreams1(dreams)
+	//
+	//dreams[1] = "七伤拳"
+	//fmt.Println(p.dreams)
 
-	dreams[1] = "七伤拳"
-	fmt.Println(p.dreams)
+
+
+	category := AnimalCategory{species: "cat"}
+	//fmt.Printf("The animal category: %s\n", category)
+
+
+	animal := AnimalOfEarth{
+		scientificName: "American Shorthair",
+		AnimalCategory: category,
+	}
+	fmt.Printf("The animal: %s\n", animal)
 }
