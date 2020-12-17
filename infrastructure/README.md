@@ -12,6 +12,27 @@
 
 变量和常量基础知识
 
+## [basic-dataType-demo](https://github.com/zhiguogg/My-Way-To-Go/tree/master/infrastructure/basic-dataType-demo)
+
+基本数据类型基础知识
+
+## [arrayDemo](https://github.com/zhiguogg/My-Way-To-Go/tree/master/infrastructure/arrayDemo)
+
+数组基础知识
+
+## [sliceDemo](https://github.com/zhiguogg/My-Way-To-Go/tree/master/infrastructure/sliceDemo)
+
+切片基础知识
+
+## [mapDemo](https://github.com/zhiguogg/My-Way-To-Go/tree/master/infrastructure/mapDemo)
+
+字典基础知识
+
 ## [structDemo](https://github.com/zhiguogg/My-Way-To-Go/tree/master/infrastructure/structDemo)
 
 结构体基础知识
+
+## [interfaceDemo](https://github.com/zhiguogg/My-Way-To-Go/tree/master/infrastructure/interfaceDemo)
+
+接口基础知识
+
